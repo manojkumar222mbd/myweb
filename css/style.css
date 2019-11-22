@@ -160,12 +160,14 @@ p{
     font-size: 13px;
     color: #4c4c4c;
     line-height: 24px;
+    text-align: justify;
  }
 
 .little-text{
     color: #989898;
     font-weight: 400;
     line-height: 18px;
+    text-align: justify;
 }
 
 blockquote {
