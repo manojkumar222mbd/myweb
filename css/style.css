@@ -653,9 +653,9 @@ section.graybg{
     border-radius: 8px;
     -webkit-border-radius: 8px;
     -moz-border-radius: 8px;
-    padding: 20px;
+    padding: 20px 40px;
    box-shadow: 0px 0px 48px 0px rgba(4, 6, 4, 0.08);
-   min-height: 186px;
+   /* min-height: 186px; */
 }
 
 /*------------------------ 5 Resume Section ------------------------*/
@@ -689,7 +689,7 @@ ul.timeline{
 
 .timeline li .line-title{
     font-size: 16px;
-    line-height: 6px;
+    /* line-height: 6px; */
 }
 
 .timeline li:first-child{
@@ -823,6 +823,7 @@ ul.timeline{
     color: #989898;
     line-height: 18px;
     display: block;
+    text-align: justify;
 } 
 
 #portfolio #filters-container .cbp-filter-item{
