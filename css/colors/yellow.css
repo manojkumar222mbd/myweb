@@ -45,7 +45,7 @@ ul.profile-information li:before{
 }
 
 ul.profile-information li:first-child:after{
-    background: url(../images/glasses.png) no-repeat; 
+    /* background: url(../images/glasses.png) no-repeat;  */
     background-size: 27px 10px;
 }
 

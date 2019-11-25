@@ -1876,6 +1876,72 @@ footer .footer .copyright a:hover{
 }
 
 
+/* Toaster alert */
+#toaster {
+    visibility: hidden;
+    min-width: 200px;
+    margin-right: 10px;
+    max-height: 50px;
+    color: #fff;
+    text-align: center;
+    border-radius: 2px;
+    padding: 16px;
+    position: fixed;
+    z-index: 1;
+    right: 0;
+    top: 2%;
+    bottom: 30px;
+    font-size: 17px;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  
+  #toaster.success {
+    background-color: #51a351;
+    visibility: visible;
+    -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+    animation: fadein 0.5s, fadeout 0.5s 2.5s;
+  }
+  #toaster.danger {
+    background-color: #bd362f;
+    visibility: visible;
+    -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+    animation: fadein 0.5s, fadeout 0.5s 2.5s;
+  }
+
+  .toaster-icon{
+    left: 16px;
+    position: absolute;
+  }
+  .toaster-text{
+    top: 13px;
+    position: absolute;
+    left: 45px;
+  }
+  
+  @-webkit-keyframes fadein {
+    from {bottom: 0; opacity: 0;} 
+    to {bottom: 30px; opacity: 1;}
+  }
+  
+  @keyframes fadein {
+    from {bottom: 0; opacity: 0;}
+    to {bottom: 30px; opacity: 1;}
+  }
+  
+  @-webkit-keyframes fadeout {
+    from {bottom: 30px; opacity: 1;} 
+    to {bottom: 0; opacity: 0;}
+  }
+  
+  @keyframes fadeout {
+    from {bottom: 30px; opacity: 1;}
+    to {bottom: 0; opacity: 0;}
+  }
+  
+   /* Toaster alert end */
+
+
 
 
 
