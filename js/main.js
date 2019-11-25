@@ -18,7 +18,17 @@ $(document).ready(function () {
     }
 
     $("button[type='submit']").click(function () {
-        showToaster('success',"Email is sent");
+        var mobileRegex = /^[0][1-9]\d{9}$|^[1-9]\d{9}$/;
+        var emailRegex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+        var cname=$("#cname").val();
+        var cmobile=$("#cmobile").val();
+        var cemail=$("#cemail").val();
+        var cmessage=$("#cname").val();
+        if(!cname || !cmobile || !cemail || !cmessage){
+            showToaster('danger',"All fields are required");
+        }else if(!cname || !cmobile || !cemail || !cmessage){
+            showToaster('danger',"All fields are required");
+        }
     });
 
     // PRELOADER

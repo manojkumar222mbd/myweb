@@ -1879,7 +1879,7 @@ footer .footer .copyright a:hover{
 /* Toaster alert */
 #toaster {
     visibility: hidden;
-    min-width: 200px;
+    min-width: 250px;
     margin-right: 10px;
     max-height: 50px;
     color: #fff;
