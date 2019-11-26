@@ -58,13 +58,13 @@ $(document).ready(function () {
         var cemail = $("#cemail").val();
         var cmessage = $("#cname").val();
         if (!cname || !cmobile || !cemail || !cmessage) {
-            showToaster('danger', "All fields are required");
+            showToaster('danger', "All fields are required"); return;
         } else if (!nameRegex.test(cname)) {
-            showToaster('danger', "Invalid Name (Letters only)");
+            showToaster('danger', "Invalid Name (Letters only)"); return;
         } else if (!mobileRegex.test(cmobile)) {
-            showToaster('danger', "Invalid Mobile No.");
+            showToaster('danger', "Invalid Mobile No."); return;
         } else if (!emailRegex.test(cemail)) {
-            showToaster('danger', "Invalid Email");
+            showToaster('danger', "Invalid Email"); return;
         }
         $("#btn-submit").hide();
         $("#btn-sending").show();
@@ -74,11 +74,23 @@ $(document).ready(function () {
             if (err) {
                 showToaster('danger', 'Something went wrong!');
             } else {
+                $("#cname").val('');
+                $("#cmobile").val('');
+                $("#cemail").val('');
+                $("#cmessage").val('');
                 showToaster('success', `Thanks for reaching me. I'll contact you soon.`);
             }
         });
     });
 
+    $(".req-doc").click(function (e) {
+        var value = $(this).closest('tr').children('td:first').text();
+        $("#cmessage").val("Please provide access of " + value + " document");
+        $("a[href=#contact]").click();
+    });
+    $("[href=#resume],[href=#portfolio],[href=#docs],[href=#home]").on("click", function () {
+        $("#cmessage").val('');
+    });
     // PRELOADER
     $('#preloader').delay(500).fadeOut('slow'); // will fade out the white DIV that covers the website.
 
@@ -243,15 +255,28 @@ $(document).ready(function () {
             }
         }]
     });
+});
 
-}); // document ready end 
-
-
-"use strict";
-$(window).load(function () {
-
-
-
-
-
-}); // window load end
+function viewDoc(title) {
+    switch (title) {
+        case 'ng':
+            window.open('https://drive.google.com/open?id=15WP9GP3hzv1qO1lhbGCZ0Yds5jdLYG9U', 'self')
+            break;
+        case 'jsa':
+            window.open('https://drive.google.com/open?id=12xNNWntgBCB17nDMC8lP-HnovR1wHbXY', 'self')
+            break;
+        case 'es6':
+            window.open('https://drive.google.com/open?id=1T0kj-WD5kxxwMsiZFYAlxQZBzzHEGPcE', 'self')
+            break;
+        case 'jst':
+            window.open('https://drive.google.com/open?id=1VPXvWY5kxEf9UPqGYQSLynhNAvdzIDNy', 'self')
+            break;
+        case 'nod':
+            window.open('https://drive.google.com/open?id=1NHdx_0ZegOyUeCdHIwZR1gS7DKP9sj0i', 'self')
+            break;
+        case 'se':
+            window.open('https://drive.google.com/open?id=1uz7_4E2ln2AMF4Q6C0O7N9tGEm9OZCHv', 'self')
+            break;
+        default:
+    }
+}

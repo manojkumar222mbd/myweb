@@ -2,7 +2,6 @@
 <html lang="en">
 
 <head>
-
     <!-- Simple Page Needs
 ================================================== -->
     <title>Manoj Kumar</title>
@@ -56,7 +55,7 @@
                 <div class="profile">
                     <div class="profile-name">
                         <span class="name">Manoj Kumar</span><br>
-                        <span class="job">Senior Software Engineer</span>
+                        <span class="job">Lead Engineer</span>
                     </div>
                     <figure class="profile-image">
                         <img src="images/profilepic.JPG" alt="">
@@ -107,6 +106,7 @@
                                         </li>
                                         <li class="tab"><a href="#resume">RESUME</a></li>
                                         <li class="tab"><a href="#portfolio">PORTFOLIO</a></li>
+                                        <li class="tab"><a href="#docs">DOCS</a></li>
                                         <li class="tab"><a href="#contact">CONTACT</a></li>
                                     </ul>
                                 </div>
@@ -376,10 +376,12 @@
                                                     </li>
                                                     <!-- a work -->
                                                     <li>
-                                                        <h3 class="line-title">Sr. Software Engineer - MothersonSumi</h3>
+                                                        <h3 class="line-title">Sr. Software Engineer - MothersonSumi
+                                                        </h3>
                                                         <span>Apr 2017 - Present</span>
                                                         <p class="little-text">Currently working in <b>MothersonSumi
-                                                            Infotech and Designs Ltd</b>, a CMM Level-5 Organisation. Here i
+                                                                Infotech and Designs Ltd</b>, a CMM Level-5
+                                                            Organisation. Here i
                                                             am working in full system development lifecycle including
                                                             design, development, testing and deployment and involving
                                                             here in various technologies like Angular, Node.js,
@@ -485,7 +487,8 @@
                                             </a>
                                         </div>
                                         <div class="cbp-item webdesign">
-                                            <a href="https://chrome.google.com/webstore/detail/classlink-oneclick-extens/jgfbgkjjlonelmpenhpfeeljjlcgnkpe?hl=en" target="_blank">
+                                            <a href="https://chrome.google.com/webstore/detail/classlink-oneclick-extens/jgfbgkjjlonelmpenhpfeeljjlcgnkpe?hl=en"
+                                                target="_blank">
                                                 <figure>
                                                     <div class="icon">
                                                         <i class="fa fa-external-link" aria-hidden="true"></i>
@@ -543,6 +546,76 @@
                                     </div>
                                 </section>
                             </div>
+                            <!-- Docs Page
+            ================================================== -->
+                            <div id="docs" class="row bottom_45">
+                                <section class="contact-form col-md-12 padding_30 padbot_45">
+                                    <div class="section-title top_15 bottom_30"><span></span>
+                                        <h2>Documents</h2>
+                                    </div>
+                                    <div>
+                                        <table class="table table-hover  " id="doc_table">
+                                            <thead>
+                                                <tr>
+                                                    <th style="width:50%">Document Title</th>
+                                                    <th style="width:25%">View</th>
+                                                    <th style="width:25%">Action</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>Angular 1.x/2+</td>
+                                                    <td><button class="btn btn-success btn-xs"
+                                                            onclick="viewDoc('ng')">View</button></td>
+                                                    <td><button class="btn btn-warning btn-xs req-doc">Request
+                                                            Access</button>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Javascript Advanced</td>
+                                                    <td><button class="btn btn-success btn-xs"
+                                                            onclick="viewDoc('jsa')">View</button></td>
+                                                    <td><button class="btn btn-warning btn-xs req-doc">Request
+                                                            Access</button>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Ecma Script 6+</td>
+                                                    <td><button class="btn btn-success btn-xs"
+                                                            onclick="viewDoc('es6')">View</button></td>
+                                                    <td><button class="btn btn-warning btn-xs req-doc">Request
+                                                            Access</button>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Js Trics</td>
+                                                    <td><button class="btn btn-success btn-xs"
+                                                            onclick="viewDoc('jst')">View</button></td>
+                                                    <td><button class="btn btn-warning btn-xs req-doc">Request
+                                                            Access</button>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Node JS Basic</td>
+                                                    <td><button class="btn btn-success btn-xs"
+                                                            onclick="viewDoc('nod')">View</button></td>
+                                                    <td><button class="btn btn-warning btn-xs req-doc">Request
+                                                            Access</button>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Software Engineering</td>
+                                                    <td><button class="btn btn-success btn-xs"
+                                                            onclick="viewDoc('se')">View</button></td>
+                                                    <td><button class="btn btn-warning btn-xs req-doc">Request
+                                                            Access</button>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </section>
+                            </div>
 
                             <!-- Contact Page
             ================================================== -->
@@ -553,24 +626,26 @@
                                         <div class="section-title top_15 bottom_30"><span></span>
                                             <h2>Contact Form</h2>
                                         </div>
-                                            <div class="site-form row">
-                                                <div class="col-md-6">
-                                                    <input class="site-input" placeholder="Name" id="cname">
-                                                </div>
-                                                <div class="col-md-6">
-                                                    <input class="site-input" placeholder="Mobile" id="cmobile">
-                                                </div>
-                                                <div class="col-md-12">
-                                                        <input class="site-input" placeholder="E-mail" id="cemail" >
-                                                </div>
-                                                <div class="col-md-12">
-                                                    <textarea class="site-area" placeholder="Message" id="cmessage"></textarea>
-                                                </div>
-                                                <div class="col-md-12 top_15 bottom_30">
-                                                    <button class="site-btn" id="btn-submit" >Submit</button>
-                                                    <button style="display: none;" class="site-btn" id="btn-sending" >Sending...</button>
-                                                </div>
+                                        <div class="site-form row">
+                                            <div class="col-md-6">
+                                                <input class="site-input" placeholder="Name" id="cname">
                                             </div>
+                                            <div class="col-md-6">
+                                                <input class="site-input" placeholder="Mobile" id="cmobile">
+                                            </div>
+                                            <div class="col-md-12">
+                                                <input class="site-input" placeholder="E-mail" id="cemail">
+                                            </div>
+                                            <div class="col-md-12">
+                                                <textarea class="site-area" placeholder="Message"
+                                                    id="cmessage"></textarea>
+                                            </div>
+                                            <div class="col-md-12 top_15 bottom_30">
+                                                <button class="site-btn" id="btn-submit">Submit</button>
+                                                <button style="display: none;" class="site-btn"
+                                                    id="btn-sending">Sending...</button>
+                                            </div>
+                                        </div>
                                     </section>
                                     <!-- Contact Informations -->
                                     <section class="contact-info col-md-6 padding_30 padbot_45">
@@ -636,4 +711,5 @@
     <!-- for color alternatives -->
     <script src="js/jquery.cookie-1.4.1.min.js"></script>
 </body>
+
 </html>
