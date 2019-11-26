@@ -1,34 +1,82 @@
 $(document).ready(function () {
 
-    function showToaster(action,msg){
+    function showToaster(action, msg) {
         var el = $("#toaster");
-		el.removeClass(action);
+        el.removeClass(action);
         el.empty();
-        if(action=='success'){
+        if (action == 'success') {
             msg = "<i class='fa fa-check toaster-icon'></i><span class='toaster-text'>" + msg + "</span>";
-        }else{
+        } else {
             msg = "<i class='fa fa-exclamation-circle toaster-icon'></i><span class='toaster-text'>" + msg + "</span>";
         }
-		el.html(msg);
-		el.addClass(action);
-		setTimeout(function () { el.removeClass(action); }, 3000);
-		el.on('click', function () {
-			el.removeClass(action);
-		});
+        el.html(msg);
+        el.addClass(action);
+        setTimeout(function () { el.removeClass(action); }, 3000);
+        el.on('click', function () {
+            el.removeClass(action);
+        });
     }
 
-    $("button[type='submit']").click(function () {
+    function sendEmail(data, callback) {
+        var msg = `Name:` + data.cname + `,  Mobile:` + data.cmobile + `,  Email:` + data.cemail + `,  Message:` + data.cmessage + ``;
+        $.ajax({
+            url: "https://api.sendgrid.com/v3/mail/send",
+            type: 'POST',
+            headers: {
+                "Content-Type": "application/json",
+                "Authorization": "Bearer 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",
+            },
+            data: {
+                "personalizations": [
+                    { "to": [{ "email": "manojkumar222mbd@gmail.com" }] }
+                ],
+                "from": { "email": "manojrajput2506@gmail.com" },
+                "subject": "My Web Contact",
+                "content": [
+                    {
+                        "type": "text/plain",
+                        "value": msg
+                    }
+                ]
+            },
+            timeout: 100000,
+            success: function (res) {
+                callback(null, res);
+            },
+            error: function (err) {
+                callback(err);
+            }
+        });
+    }
+
+    $("#btn-submit").click(function () {
+        var nameRegex = /^[a-zA-Z]+$/;
         var mobileRegex = /^[0][1-9]\d{9}$|^[1-9]\d{9}$/;
         var emailRegex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
-        var cname=$("#cname").val();
-        var cmobile=$("#cmobile").val();
-        var cemail=$("#cemail").val();
-        var cmessage=$("#cname").val();
-        if(!cname || !cmobile || !cemail || !cmessage){
-            showToaster('danger',"All fields are required");
-        }else if(!cname || !cmobile || !cemail || !cmessage){
-            showToaster('danger',"All fields are required");
+        var cname = $("#cname").val();
+        var cmobile = $("#cmobile").val();
+        var cemail = $("#cemail").val();
+        var cmessage = $("#cname").val();
+        if (!cname || !cmobile || !cemail || !cmessage) {
+            showToaster('danger', "All fields are required");
+        } else if (!nameRegex.test(cname)) {
+            showToaster('danger', "Invalid Name (Letters only)");
+        } else if (!mobileRegex.test(cmobile)) {
+            showToaster('danger', "Invalid Mobile No.");
+        } else if (!emailRegex.test(cemail)) {
+            showToaster('danger', "Invalid Email");
         }
+        $("#btn-submit").hide();
+        $("#btn-sending").show();
+        sendEmail({ cname: cname, cmobile: cmobile, cemail: cemail, cmessage: cmessage }, function (err, res) {
+            $("#btn-submit").show();
+            $("#btn-sending").hide();
+            if (err) {
+                showToaster('danger', 'Something went wrong!');
+            } else {
+                showToaster('success', `Thanks for reaching me. I'll contact you soon.`);
+            }
+        });
     });
 
     // PRELOADER
@@ -206,6 +254,4 @@ $(window).load(function () {
 
 
 
-}); // window load end 
-
-
+}); // window load end
