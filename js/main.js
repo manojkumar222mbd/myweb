@@ -59,8 +59,6 @@ $(document).ready(function () {
         var cmessage = $("#cname").val();
         if (!cname || !cmobile || !cemail || !cmessage) {
             showToaster('danger', "All fields are required"); return;
-        } else if (!nameRegex.test(cname)) {
-            showToaster('danger', "Invalid Name (Letters only)"); return;
         } else if (!mobileRegex.test(cmobile)) {
             showToaster('danger', "Invalid Mobile No."); return;
         } else if (!emailRegex.test(cemail)) {
@@ -68,6 +66,8 @@ $(document).ready(function () {
         }
         $("#btn-submit").hide();
         $("#btn-sending").show();
+        showToaster('success', `Thanks for reaching me. I'll contact you soon.`);
+        return;
         sendEmail({ cname: cname, cmobile: cmobile, cemail: cemail, cmessage: cmessage }, function (err, res) {
             $("#btn-submit").show();
             $("#btn-sending").hide();
