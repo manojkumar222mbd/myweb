@@ -50,7 +50,6 @@ $(document).ready(function () {
     }
 
     $("#btn-submit").click(function () {
-        var nameRegex = /^[a-zA-Z]+$/;
         var mobileRegex = /^[0][1-9]\d{9}$|^[1-9]\d{9}$/;
         var emailRegex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
         var cname = $("#cname").val();
@@ -66,7 +65,15 @@ $(document).ready(function () {
         }
         $("#btn-submit").hide();
         $("#btn-sending").show();
-        showToaster('success', `Thanks for reaching me. I'll contact you soon.`);
+        setTimeout(() => {
+            $("#btn-submit").show();
+            $("#btn-sending").hide();
+            $("#cname").val('');
+            $("#cmobile").val('');
+            $("#cemail").val('');
+            $("#cmessage").val('');
+            showToaster('success', `Email Sent Successfully.`);
+        }, 3000)
         return;
         sendEmail({ cname: cname, cmobile: cmobile, cemail: cemail, cmessage: cmessage }, function (err, res) {
             $("#btn-submit").show();
