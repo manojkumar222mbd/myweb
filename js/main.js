@@ -90,11 +90,6 @@ $(document).ready(function () {
         });
     });
 
-    $(".req-doc").click(function (e) {
-        var value = $(this).closest('tr').children('td:first').text();
-        $("#cmessage").val("Please provide access of " + value + " document");
-        $("a[href=#contact]").click();
-    });
     $("[href=#resume],[href=#portfolio],[href=#docs],[href=#home]").on("click", function () {
         $("#cmessage").val('');
     });

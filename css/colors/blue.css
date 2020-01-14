@@ -3,19 +3,19 @@
 /*---------------------------------- */
 
 header nav a.home-btn, .estate figure .imgout .price, .site-btn, .timeline li:first-child i, nav ul li a:after, .owl-theme .owl-controls .owl-page span, .skill-list .progress .percentage, ul.profile-information li:first-child:before{
-    background: #425cbb !important;
+    background: #2196f3 !important;
 }
 
 header nav ul li a:hover, .events ul li .datenlocation span, .namenprice .price, .cbp-filter-item-active, .portfolio-content p span, #blog-post .blog-sidebar ul.category-list li a:hover, #blog-post .blog-sidebar .popular-posts ul li a .info{
-    color: #425cbb !important;
+    color: #2196f3 !important;
 }
 
 .spinner:before{
-    border-top-color: #425cbb;  
+    border-top-color: #2196f3;  
 }
 
 ul.profile-information li:before{
-	border-color: #425cbb; 
+	border-color: #2196f3; 
 }
 
 /* Hover Color*/
@@ -37,11 +37,11 @@ ul.profile-information li:before{
 }
 
 .timeline li:before, ul.profile-information li:before{
-	border-color: #425cbb !important;
+	border-color: #2196f3 !important;
 }
 
 .tab.active a, #blog-post .post-list ul li a, #blog-post .post-comment ul li .comment-content a{
-	color: #425cbb;
+	color: #2196f3;
 }
 
 
