@@ -279,6 +279,9 @@ function viewDoc(title) {
         case 'se':
             window.open('https://drive.google.com/open?id=1uz7_4E2ln2AMF4Q6C0O7N9tGEm9OZCHv', 'self')
             break;
+        case 'react':
+            window.open('https://drive.google.com/open?id=11wW79eu-s5tV9rEYtKaO8MvfT8APgCACrwERqbNhnQw', 'self')
+            break;
         default:
     }
 }
