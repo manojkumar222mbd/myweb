@@ -474,6 +474,8 @@ ul.profile-information li:first-child:after{
 .profile .site-btn{
     margin: 18px auto 30px;
     display: block;
+    text-align: center;
+    width: 155px;
 }
 
 
