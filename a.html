@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  
+  
+<body>
+<h1>LWD - 11-May-2022, DOJ- 16-May-2022</h1>
+
+<p id="p1"></p>
+<p id="p2"></p>
+
+<script>
+let date1 = new Date();
+let date2 = new Date('05/11/2022');
+let diffTime = Math.abs(date2 - date1);
+let diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+document.getElementById("p1").innerHTML = `<h3>Days left in HCL:  ${diffDays} days</h3>`;
+
+let date1j = new Date();
+let date2j = new Date('05/16/2022');
+let diffTimej = Math.abs(date2j - date1j);
+let diffDaysj = Math.ceil(diffTimej / (1000 * 60 * 60 * 24));
+document.getElementById("p2").innerHTML = `<h3>Days left in Joining:  ${diffDaysj} days</h3>`;
+
+</script>
+</body>
+  
+</html>
